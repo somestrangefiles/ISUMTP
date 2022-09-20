@@ -1,0 +1,16 @@
+const current_date = new Date()
+const next_new_year_date = new Date(current_date.getFullYear() + 1, 0, 1, 0, 0, 0)
+var diff_time = Math.abs(next_new_year_date - current_date)
+
+const diff_weeks = Math.floor(diff_time / (1000 * 60 * 60 * 24 * 7))
+diff_time = diff_time % (1000 * 60 * 60 * 24 * 7)
+const diff_days = Math.floor(diff_time / (1000 * 60 * 60 * 24))
+diff_time = diff_time % (1000 * 60 * 60 * 24)
+const diff_hours = Math.floor(diff_time / (1000 * 60 * 60))
+diff_time = diff_time % (1000 * 60 * 60)
+const diff_minutes = Math.floor(diff_time / (1000 * 60))
+diff_time = diff_time % (1000 * 60)
+const diff_seconds = Math.floor(diff_time / (1000))
+diff_time = diff_time % (1000)
+console.log("До ближайшего НГ осталось: " + diff_weeks + " недель, " + diff_days +
+ " дней, " + diff_hours + " часов, " + diff_minutes + " минут, " + diff_seconds + " секунд, " + diff_time + " миллисекунд.")
